@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1680445966",
+        "python_version": "3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\ReV\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\mlagents-learn config/agent-config.yaml --run-id TetrisPPO --force",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.13.1+cu117",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1680445968"
+    },
+    "total": 2.3075650999999997,
+    "count": 1,
+    "self": 0.09368979999999993,
+    "children": {
+        "run_training.setup": {
+            "total": 0.07269550000000002,
+            "count": 1,
+            "self": 0.07269550000000002
+        },
+        "TrainerController.start_learning": {
+            "total": 2.1411797999999997,
+            "count": 1,
+            "self": 0.0002531999999995094,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 2.1409196,
+                    "count": 1,
+                    "self": 2.1409196
+                },
+                "trainer_threads": {
+                    "total": 5.999999999062311e-07,
+                    "count": 1,
+                    "self": 5.999999999062311e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 6.400000000184036e-06,
+                    "count": 1,
+                    "self": 6.400000000184036e-06
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+behaviors:
+  TetrisPPO:
+  
+    trainer_type: ppo
+    max_steps: 1.0e7
+    time_horizon: 128
+    summary_freq: 10000
+    keep_checkpoints: 5
+    checkpoint_interval: 50000
+    threaded: false
+    init_path: null
+
+    hyperparameters:
+      # Hyperparameters common to PPO and SAC
+      batch_size: 512
+      buffer_size: 409600
+      learning_rate: 1e-5
+      learning_rate_schedule: linear
+
+      # PPO-specific hyperparameters
+      beta: 1e-2
+      epsilon: 0.3
+      lambd: 0.95
+      num_epoch: 10
+
+    # Configuration of the neural network (common to PPO/SAC)
+    network_settings:
+      vis_encode_type: simple
+      normalize: false
+      hidden_units: 256
+      num_layers: 3
+      # memory
+      memory:
+        sequence_length: 64
+        memory_size: 128
+
+    reward_signals:
+      # environment reward (default)
+      extrinsic:
+        strength: 1.0
+        gamma: 0.99
+      
+      # GAIL
+      gail:
+        strength: 0.5
+        demo_path: Demos/TetrisDemo.demo
